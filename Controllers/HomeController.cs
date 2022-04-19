@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using oneToMany.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace oneToMany.Controllers
 {
@@ -35,6 +36,8 @@ namespace oneToMany.Controllers
     public IActionResult Songs()
     {
       ViewBag.AllArtists = _context.Artists.OrderBy(a => a.Name).ToList();
+      // ViewBag.AllSongs = _context.Songs.OrderBy(a => a.Title).ToList();
+      ViewBag.AllSongs = _context.Songs.Include(a => a.Performer).OrderBy(a => a.Title).ToList();
 
       return View();
     }
@@ -45,11 +48,14 @@ namespace oneToMany.Controllers
       {
         _context.Songs.Add(newSong);
         _context.SaveChanges();
+
+        ViewBag.AllArtists = _context.Artists.OrderBy(a => a.Name).ToList();
         ViewBag.AllSongs = _context.Songs.OrderBy(a => a.Title).ToList();
         return RedirectToAction("Songs");
       }
       else
       {
+        ViewBag.AllArtists = _context.Artists.OrderBy(a => a.Name).ToList();
         ViewBag.AllSongs = _context.Songs.OrderBy(a => a.Title).ToList();
         return View("Songs");
       }

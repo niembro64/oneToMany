@@ -10,8 +10,10 @@ namespace oneToMany.Models
     [Required]
     public string Title { get; set; }
     [Required]
+    [Range(0,59)]
     public int Minutes { get; set; }
     [Required]
+       [Range(0,59)]
     public int Seconds { get; set; }
     [Required]
     public int ArtistId { get; set; }

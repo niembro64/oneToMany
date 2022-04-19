@@ -1,5 +1,5 @@
 @{
-  ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Songs";
 }
 @model Song
 
@@ -39,7 +39,12 @@
     </div>
     <div class="col-6">
       <h1>All Songs</h1>
-
+      <ul>
+        @foreach (Song s in ViewBag.AllSongs)
+        {
+          <li>@s.Title (@s.Minutes:@s.Seconds.ToString().PadLeft(2,'0')) by @s.Performer.Name</li>
+        }
+      </ul>
     </div>
   </div>
 </div>
