@@ -31,6 +31,30 @@ namespace oneToMany.Controllers
       return View();
     }
 
+    [HttpGet("/songs")]
+    public IActionResult Songs()
+    {
+      ViewBag.AllArtists = _context.Artists.OrderBy(a => a.Name).ToList();
+
+      return View();
+    }
+    [HttpPost("song/create")]
+    public IActionResult AddSong(Song newSong)
+    {
+      if (ModelState.IsValid)
+      {
+        _context.Songs.Add(newSong);
+        _context.SaveChanges();
+        ViewBag.AllSongs = _context.Songs.OrderBy(a => a.Title).ToList();
+        return RedirectToAction("Songs");
+      }
+      else
+      {
+        ViewBag.AllSongs = _context.Songs.OrderBy(a => a.Title).ToList();
+        return View("Songs");
+      }
+    }
+
     [HttpPost("artist/create")]
     public IActionResult AddArtist(Artist newArtist)
     {

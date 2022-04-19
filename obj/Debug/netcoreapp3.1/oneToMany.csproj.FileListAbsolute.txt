@@ -58,3 +58,4 @@ C:\Users\nieme\Documents\CodingDojo\CSharpStack2022\2.5\oneToMany\obj\Debug\netc
 C:\Users\nieme\Documents\CodingDojo\CSharpStack2022\2.5\oneToMany\obj\Debug\netcoreapp3.1\oneToMany.dll
 C:\Users\nieme\Documents\CodingDojo\CSharpStack2022\2.5\oneToMany\obj\Debug\netcoreapp3.1\oneToMany.pdb
 C:\Users\nieme\Documents\CodingDojo\CSharpStack2022\2.5\oneToMany\obj\Debug\netcoreapp3.1\oneToMany.genruntimeconfig.cache
+C:\Users\nieme\Documents\CodingDojo\CSharpStack2022\2.5\oneToMany\obj\Debug\netcoreapp3.1\Razor\Views\Home\Songs.cshtml.g.cs
