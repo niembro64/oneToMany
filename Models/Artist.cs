@@ -9,7 +9,9 @@ namespace oneToMany.Models
   {
     [Key]
     public int ArtistId { get; set; }
+    [Required]
     public string Name { get; set; }
+    [Required]
     public string Genre { get; set; }
 
     // navigation property

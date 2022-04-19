@@ -7,9 +7,13 @@ namespace oneToMany.Models
   {
     [Key]
     public int SongId { get; set; }
+    [Required]
     public string Title { get; set; }
+    [Required]
     public int Minutes { get; set; }
+    [Required]
     public int Seconds { get; set; }
+    [Required]
     public int ArtistId { get; set; }
 
     // navigation property
